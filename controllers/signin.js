@@ -3,6 +3,9 @@ const handleSignIn = (db, bcrypt) => (req, res) => {
   if (!email || !password) {
     return res.status(400).json("incorrect form submission");
   }
+  db.select("email", "hash").from('login').then(data => {
+    res.json(data);
+  })
   db.select("email", "hash")
     .from("login")
     .where("email", "=", req.body.email)
@@ -21,7 +24,7 @@ const handleSignIn = (db, bcrypt) => (req, res) => {
         res.status(400).json("wrong credentials");
       }
     })
-    .catch((err) => res.status(400).json(err));
+    .catch((err) => res.status(400).json(err);
 };
 
 module.exports = {
