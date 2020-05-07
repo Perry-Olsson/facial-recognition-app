@@ -80,7 +80,7 @@ class App extends Component {
       box: {},
       imageUrl: this.state.input,
     });
-    fetch("https://git.heroku.com/hidden-refuge-29818.git/imageurl", {
+    fetch("/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -90,7 +90,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          fetch("https://git.heroku.com/hidden-refuge-29818.git/image", {
+          fetch("/image", {
             method: "put",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
