@@ -4,7 +4,7 @@ const handleSignIn = (db, bcrypt) => (req, res) => {
     return res.status(400).json("incorrect form submission");
   }
   db.select("email", "hash").from('login').then(data => {
-    res.json(data);
+    return res.json(data);
   })
   db.select("email", "hash")
     .from("login")
