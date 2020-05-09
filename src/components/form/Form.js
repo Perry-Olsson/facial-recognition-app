@@ -23,7 +23,8 @@ class Register extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch(`/${this.props.route}`, {
+    const route = this.props.formType === "Register" ? "register" : "signin";
+    fetch(`/${route}`, {
       method: "post",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
