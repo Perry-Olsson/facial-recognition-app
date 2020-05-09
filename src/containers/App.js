@@ -24,7 +24,7 @@ const initialState = {
   input: "",
   imageUrl: "",
   box: {},
-  route: "signin",
+  route: "Sign in",
   isSignedIn: false,
   user: {
     id: "",
@@ -109,7 +109,7 @@ class App extends Component {
   };
 
   onRouteChange = (route) => {
-    if (route === "signin") {
+    if (route === "Sign in") {
       this.setState(initialState);
     } else if (route === "home") {
       this.setState({ isSignedIn: true });
@@ -140,16 +140,14 @@ class App extends Component {
             />
             <FaceRecognition box={box} imageUrl={imageUrl} />
           </div>
-        ) : route === "signin" ? (
+        ) : route === "Sign in" ? (
           <Form
-            route={"signin"}
             formType={"Sign in"}
             loadUser={this.loadUser}
             onRouteChange={this.onRouteChange}
           />
         ) : (
           <Form
-            route={"register"}
             formType={"Register"}
             loadUser={this.loadUser}
             onRouteChange={this.onRouteChange}

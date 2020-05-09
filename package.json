@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bcrypt-nodejs": "0.0.3",
     "clarifai": "^2.9.1",
+    "dotenv": "^8.2.0",
     "knex": "^0.21.1",
     "path": "^0.12.7",
     "pg": "^8.0.3",

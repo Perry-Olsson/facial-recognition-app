@@ -40,7 +40,7 @@ class Register extends React.Component {
         }
       })
       .catch((err) => {
-        console.log(err);
+        res.status(400).json(err);
       });
   };
 
@@ -102,7 +102,7 @@ class Register extends React.Component {
             {formType === "Sign in" && (
               <div className="lh-copy mt3">
                 <p
-                  onClick={() => onRouteChange("register")}
+                  onClick={() => onRouteChange("Register")}
                   href="#0"
                   className="ba b--gray w-50 center f6 link dim black db pointer"
                 >
